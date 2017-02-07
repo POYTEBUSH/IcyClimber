@@ -20,6 +20,7 @@ function love.load()
   require "Source/MainGame"
   require "Source/CollisionHandler"
   require "Source/Gameover"
+  require "Source/Rocks"
 
   gameState = "startScreen"
     
@@ -27,6 +28,7 @@ function love.load()
   MainGameLoad()
   MainGameLoad()
   GameOverLoad()
+  RocksLoad()
 end
 
 function love.draw()
@@ -42,6 +44,7 @@ function love.draw()
   elseif(gameState == "game") then
     
     MainGameDraw() 
+    RocksDraw()
     
   elseif(gameState == "death") then
     
@@ -59,6 +62,7 @@ function love.update(dt)
   elseif(gameState == "game") then
 
     MainGameUpdate(dt)
+    RocksUpdate(dt)
     
   elseif(gameState == "death") then
     
