@@ -6,7 +6,8 @@ function MainGameLoad()
   FallingWallsLoad()
   PlayerLoad()
   fallingSpeed = 120
-  
+
+
   --Timer for testing only
   timer = 0
 end

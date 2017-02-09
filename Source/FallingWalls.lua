@@ -15,7 +15,7 @@ end
 function FallingWallsUpdate(dt)
 
   leftWall1 = leftWall1 + fallingSpeed
-  leftWall2 = leftWall2+ fallingSpeed
+  leftWall2 = leftWall2 + fallingSpeed
   rightWall1 = rightWall1 + fallingSpeed
   rightWall2 = rightWall2 + fallingSpeed
   
