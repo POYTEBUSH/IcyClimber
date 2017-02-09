@@ -14,10 +14,10 @@ end
 
 function FallingWallsUpdate(dt)
 
-  leftWall1 = leftWall1 + FallingSpeed
-  leftWall2 = leftWall2+ FallingSpeed
-  rightWall1 = rightWall1 + FallingSpeed
-  rightWall2 = rightWall2 + FallingSpeed
+  leftWall1 = leftWall1 + fallingSpeed
+  leftWall2 = leftWall2+ fallingSpeed
+  rightWall1 = rightWall1 + fallingSpeed
+  rightWall2 = rightWall2 + fallingSpeed
   
   if(leftWall1 >= 960)then
     leftWall1 = -960

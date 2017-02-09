@@ -69,7 +69,7 @@ function UpdateGrapplingHook(dt)
   end
   
   if(hookState == "hooked")then
-    hookPosY = hookPosY + FallingSpeed
+    hookPosY = hookPosY + fallingSpeed
     
     --Normalize vector
     vecLength = math.sqrt((fireVector.x * fireVector.x) + (fireVector.y * fireVector.y))

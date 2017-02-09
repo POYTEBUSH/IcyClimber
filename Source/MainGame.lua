@@ -5,13 +5,14 @@ function MainGameLoad()
   
   FallingWallsLoad()
   PlayerLoad()
-  FallingSpeed = 2.0
+  fallingSpeed = 120
   
   --Timer for testing only
   timer = 0
 end
 
 function MainGameUpdate(dt)
+  fallingSpeed = 120 * dt
 
   timer = timer + dt
   if(timer > 45) then
@@ -27,7 +28,6 @@ end
 function MainGameDraw()
   love.graphics.setColor(255, 255, 255)
   love.graphics.rectangle("fill", 0, 0, windowWidth, windowHeight)
-  
   
   PlayerDraw()
   FallingWallsDraw()

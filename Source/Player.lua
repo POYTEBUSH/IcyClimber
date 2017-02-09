@@ -19,7 +19,7 @@ end
 function PlayerUpdate(dt)
   --Once player is on wall, fall at same speed as the wall
   --if playerState == "onLeftWall" or playerState == "onRightWall" then
-    playerPosY = playerPosY + FallingSpeed
+    playerPosY = playerPosY + fallingSpeed
   --end
 
   UpdateGrapplingHook(dt)
