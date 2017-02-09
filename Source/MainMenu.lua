@@ -1,5 +1,5 @@
 function MenuLoad()
-  playButton = love.graphics.newImage("Sprites/playButton.png") 
+  playButton = love.graphics.newImage("Sprites/PlayButton.png") 
   playButtonX = 120
   playButtonY = 300
   playButtonW = 300

@@ -1,17 +1,15 @@
 function love.load()
 
   windowWidth = 540
-  windowHeight = 1920/2
+  windowHeight = 960
 
   if love.system.getOS() == "Android" then
     local x, y = love.graphics.getDimensions()
     scaleX = (x/windowWidth)
     scaleY = (y/windowHeight)
-
   else
     scaleX = 0.7
     scaleY = 0.7
-
   end
   
   love.window.setMode(windowWidth * scaleX, windowHeight * scaleY)
@@ -35,7 +33,7 @@ function love.draw()
 
   love.graphics.scale(scaleX,scaleY)
   --reset color every frame
-  love.graphics.setColor(255, 255,255)
+  love.graphics.setColor(255, 255, 255)
   
   if(gameState == "startScreen") then
     
@@ -55,6 +53,7 @@ function love.draw()
 end
 
 function love.update(dt)
+  
   if(gameState == "startScreen") then
     
       MenuUpdate(dt)
