@@ -3,10 +3,13 @@ function RocksLoad()
   require "Source/CollisionHandler"
   require "Source/Player"
   
-  rocks = {}
-  table.insert(rocks, {image = love.graphics.newImage("Sprites/snowball.png"), x = math.random(1,400), y = -100, width = 64, height = 64, speed = 4 })
-  table.insert(rocks, {image = love.graphics.newImage("Sprites/snowball.png"), x = math.random(1,400), y = -100, width = 64, height = 64, speed = 5 })
+  numberOfRocks = 5
   
+  rocks = {}
+  for i=1, numberOfRocks do
+    table.insert(rocks, {image = love.graphics.newImage("Sprites/snowball.png"), x = math.random(1,400), y = -1 * math.random(100,400), width = 64, height = 64, speed = 960 })
+  end
+    
 end
 
 function RocksUpdate(dt)

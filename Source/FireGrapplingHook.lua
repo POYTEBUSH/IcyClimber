@@ -16,7 +16,7 @@ function LoadGrapplingHook()
   hookState = "notInUse"
   
   fireVector = {x = 0, y = 0}  
-  grapplingFireSpeed = 0.15
+  grapplingFireSpeed = 3
   pullSpeed = 0
   acceleration = 0.5
   angle = 0
@@ -48,8 +48,8 @@ function UpdateGrapplingHook(dt)
   end
   
   if(hookState == "firing") then
-    hookPosX = hookPosX + (fireVector.x * grapplingFireSpeed)
-    hookPosY = hookPosY + (fireVector.y * grapplingFireSpeed)
+    hookPosX = hookPosX + (fireVector.x * (grapplingFireSpeed * dt))
+    hookPosY = hookPosY + (fireVector.y * (grapplingFireSpeed * dt))
     
     --rotation angle for grapple
     angle = math.atan2((grappleTarget.y - playerPosY) , (grappleTarget.x - playerPosX)) + 1.5708
@@ -95,7 +95,7 @@ function UpdateGrapplingHook(dt)
     end
     
     acceleration = acceleration + 0.15
-    pullSpeed = pullSpeed + (0.1 * (acceleration * acceleration))
+    pullSpeed = pullSpeed + (0.1 * (acceleration * dt))
     
   end
   
