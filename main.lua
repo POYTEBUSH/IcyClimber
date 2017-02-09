@@ -21,6 +21,9 @@ function love.load()
   require "Source/Rocks"
 
   gameState = "startScreen"
+  
+  --Makes math.random actually random rather than using the same seed.
+  math.randomseed(os.time())  
     
   MenuLoad()
   MainGameLoad()
