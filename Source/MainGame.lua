@@ -3,11 +3,15 @@ function MainGameLoad()
   require "Source/FallingWalls"
   require "Source/Player"
   require "Source/Rocks"
+  require "Source/GameUI"
+  require "Source/Collectibles"
   
   FallingWallsLoad()
   PlayerLoad()
   fallingSpeed = 120
   RocksLoad()
+  GameUILoad()
+  CollectiblesLoad()
 
   timer = 0
 end
@@ -23,7 +27,10 @@ function MainGameUpdate(dt)
   PlayerUpdate(dt)
   --Update rocks
   RocksUpdate(dt)
-  
+  --Update game UI
+  GameUIUpdate(dt)
+  --Update collectibles
+  CollectiblesUpdate()
 end
 
 function MainGameDraw()
@@ -33,6 +40,9 @@ function MainGameDraw()
   PlayerDraw()
   FallingWallsDraw()
   RocksDraw()
+  GameUIDraw()
+  CollectiblesDraw()
+  
 end
 
 function MainGameMousePressed(x, y, button)
