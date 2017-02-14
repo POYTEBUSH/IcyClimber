@@ -2,13 +2,13 @@ function MainGameLoad()
   
   require "Source/FallingWalls"
   require "Source/Player"
+  require "Source/Rocks"
   
   FallingWallsLoad()
   PlayerLoad()
   fallingSpeed = 120
+  RocksLoad()
 
-
-  --Timer for testing only
   timer = 0
 end
 
@@ -16,14 +16,14 @@ function MainGameUpdate(dt)
   fallingSpeed = 120 * dt
 
   timer = timer + dt
-  if(timer > 45) then
-    gameState = "death"
-  end
 
   --Update falling walls
   FallingWallsUpdate(dt)
   --Update player
   PlayerUpdate(dt)
+  --Update rocks
+  RocksUpdate(dt)
+  
 end
 
 function MainGameDraw()
@@ -32,6 +32,7 @@ function MainGameDraw()
   
   PlayerDraw()
   FallingWallsDraw()
+  RocksDraw()
 end
 
 function MainGameMousePressed(x, y, button)

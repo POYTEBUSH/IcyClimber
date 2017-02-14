@@ -16,9 +16,9 @@ function LoadGrapplingHook()
   hookState = "notInUse"
   
   fireVector = {x = 0, y = 0}  
-  grapplingFireSpeed = 3
-  pullSpeed = 0
-  acceleration = 0.5
+  grapplingFireSpeed = 6
+  pullSpeed = 40
+  acceleration = 40
   angle = 0
 end
 
@@ -27,8 +27,8 @@ function UpdateGrapplingHook(dt)
   if (hookState == "notInUse") then
     angle = math.rad(180)
     armAngle = math.rad(0)
-    acceleration = 0.5
-    pullSpeed = 0
+    acceleration = 40
+    pullSpeed = 40
   end
   
   if (playerState == "onLeftWall" or playerState == "onRightWall") then
@@ -95,7 +95,7 @@ function UpdateGrapplingHook(dt)
     end
     
     acceleration = acceleration + 0.15
-    pullSpeed = pullSpeed + (0.1 * (acceleration * dt))
+    pullSpeed = pullSpeed + (acceleration * dt)
     
   end
   
