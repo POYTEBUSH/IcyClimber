@@ -11,5 +11,10 @@ function GameUIDraw()
   love.graphics.rectangle("fill", 0, windowHeight - 96, windowWidth, 96)
   love.graphics.setColor(255, 255, 255)
   love.graphics.print("score: " .. score, 0, windowHeight - 96, 0, 2, 2)
+  
+  if shield == true then
+    love.graphics.print("shield" , 270, windowHeight - 96, 0, 2, 2)
+  end
+  
   love.graphics.print("coins: " .. coins, 0, windowHeight - 48, 0, 2, 2)
 end

@@ -31,7 +31,12 @@ function RocksUpdate(dt)
     
     --Handles collision between rocks and player
     if BoxCollision(r.x, r.y, r.size, r.size, playerPosX, playerPosY, playerWidth, playerHeight) == true then
-      gameState = "death"
+      if shield == false then
+        gameState = "death"
+      else
+        ResetRockPos(i)
+        shield = false
+      end
     end
     
     --Handles collision between rocks and hook
