@@ -16,7 +16,7 @@ function LoadGrapplingHook()
   hookState = "notInUse"
   
   fireVector = {x = 0, y = 0}  
-  grapplingFireSpeed = 6
+  grapplingFireSpeed = 4
   pullSpeed = 40
   acceleration = 40
   angle = 0
