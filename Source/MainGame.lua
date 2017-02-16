@@ -35,12 +35,14 @@ end
 
 function MainGameDraw()
   love.graphics.setColor(255, 255, 255)
-  love.graphics.rectangle("fill", 0, 0, windowWidth, windowHeight)
   
   PlayerDraw()
-  FallingWallsDraw()
   RocksDraw()
+  
+  FallingWallsDraw()
   GameUIDraw()
+  
+
   CollectiblesDraw()
   
 end

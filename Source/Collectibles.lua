@@ -19,7 +19,7 @@ function CollectiblesLoad()
 
   --Initialises collectibles
   for i=1, amountOfCollectibles do
-    table.insert(collectibles, {image = collectibleImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false, typec = 2 })
+    table.insert(collectibles, {image = collectibleImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false, typec = math.random(1,3) })
   end
   
 end

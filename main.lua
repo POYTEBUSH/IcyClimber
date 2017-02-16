@@ -18,6 +18,7 @@ function love.load()
   require "Source/MainGame"
   require "Source/CollisionHandler"
   require "Source/Gameover"
+  require "Source/FallingSnow"
   
 
   gameState = "startScreen"
@@ -29,6 +30,7 @@ function love.load()
   MainGameLoad()
   MainGameLoad()
   GameOverLoad()
+  FallingSnowLoad()
 end
 
 function love.draw()
@@ -36,6 +38,7 @@ function love.draw()
   love.graphics.scale(scaleX,scaleY)
   --reset color every frame
   love.graphics.setColor(255, 255, 255)
+  FallingSnowDraw()
   
   if(gameState == "startScreen") then
     
@@ -54,6 +57,8 @@ function love.draw()
 end
 
 function love.update(dt)
+  
+  FallingSnowUpdate(dt)
   
   if(gameState == "startScreen") then
     

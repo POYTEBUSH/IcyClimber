@@ -51,7 +51,7 @@ function RocksUpdate(dt)
   if rocks[amountOfRocks].active == false and math.floor(timer/rockSpawnTime) > 0 and rocks[math.floor(timer/rockSpawnTime)].active == false then
     rocks[math.floor(timer/rockSpawnTime)].active = true
     ResetRockPos(math.floor(timer/rockSpawnTime))
-    rockSpawnTime = rockSpawnTime * 2
+    rockSpawnTime = rockSpawnTime * 1.5
   end
 end
 

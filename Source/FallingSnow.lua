@@ -10,8 +10,8 @@ end
 
 function FallingSnowUpdate(dt)
 
-  snow1Y = snow1Y + (fallingSpeed * speedModifier)
-  snow2Y = snow2Y + (fallingSpeed * speedModifier)
+  snow1Y = snow1Y + (250 * dt * speedModifier)
+  snow2Y = snow2Y + (250 * dt * speedModifier)
   
   if(snow1Y >= 960)then
     snow1Y = -960
