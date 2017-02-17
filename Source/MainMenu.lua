@@ -16,6 +16,7 @@ function MenuUpdate(dt)
 end
 
 function MenuDraw()
+  
   love.graphics.draw(playButton, playButtonX, playButtonY)
   love.graphics.draw(achievementsButton, playButtonX, playButtonY + 150)
   love.graphics.draw(optionsButton, playButtonX, playButtonY + 300)
