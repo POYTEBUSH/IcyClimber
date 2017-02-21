@@ -38,12 +38,9 @@ function MainGameDraw()
   
   PlayerDraw()
   RocksDraw()
-  
+  CollectiblesDraw()
   FallingWallsDraw()
   GameUIDraw()
-  
-
-  CollectiblesDraw()
   
 end
 
