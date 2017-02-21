@@ -38,7 +38,7 @@ function FallingWallsUpdate(dt)
 end
 
 function FallingWallsDraw()
-  
+  love.graphics.setColor(255, 255, 255)
   love.graphics.draw(wallPic1, 0, leftWall1)
   love.graphics.draw(wallPic2, 0, leftWall2)
   love.graphics.draw(wallPic3, 480, rightWall1)

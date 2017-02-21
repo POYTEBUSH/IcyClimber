@@ -11,7 +11,7 @@ function GameUIUpdate()
 end
 
 function GameUIDraw()
-  
+  love.graphics.setColor(255, 255, 255)
   love.graphics.draw(snow, snowPanelX, snowPanelY) 
   love.graphics.setColor(0,0,0)
   love.graphics.print("score: " .. score, 50, windowHeight - 96, 0, 2, 2)
