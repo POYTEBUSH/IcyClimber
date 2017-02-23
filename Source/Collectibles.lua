@@ -16,6 +16,7 @@ function CollectiblesLoad()
   speedModifierEnd = 0
   
   shield = false
+  slow = false
 
   --Initialises collectibles
   for i=1, amountOfCollectibles do
@@ -61,6 +62,7 @@ function CollectiblesUpdate(dt)
   --Ends the slowdown powerup
   if timer > speedModifierEnd then
     speedModifier = 1
+    slow = false
   end
   
 end
@@ -77,6 +79,7 @@ end
 --Handles picking up collectibles
 function CollectiblePickup(collectibleNum)
   if collectibles[collectibleNum].typec == 1 then
+    slow = true
     speedModifier = 0.5
     speedModifierEnd = timer + speedModifierLength
   elseif collectibles[collectibleNum].typec == 2 then
