@@ -10,13 +10,13 @@ function CollectiblesLoad()
   coins = 0
   
   --How long the slow down powerup lasts (in seconds)
-  speedModifierLength = 5
+  speedModifierLength = 10
   
   --Used to end the slow down powerup after the speedModifierLength is up
   speedModifierEnd = 0
   
   shield = false
-  slow = false
+  slowDown = false
 
   --Initialises collectibles
   for i=1, amountOfCollectibles do
@@ -62,7 +62,6 @@ function CollectiblesUpdate(dt)
   --Ends the slowdown powerup
   if timer > speedModifierEnd then
     speedModifier = 1
-    slow = false
   end
   
 end
@@ -79,13 +78,14 @@ end
 --Handles picking up collectibles
 function CollectiblePickup(collectibleNum)
   if collectibles[collectibleNum].typec == 1 then
-    slow = true
-    speedModifier = 0.5
-    speedModifierEnd = timer + speedModifierLength
+    slowDown = true
   elseif collectibles[collectibleNum].typec == 2 then
     shield = true
   elseif collectibles[collectibleNum].typec == 3 then
     coins = coins + 1
+  elseif collectibles[collectibleNum].typec == 4 then
+    speedModifier = 0.5
+    speedModifierEnd = timer + speedModifierLength
   end
   collectibleScore = collectibleScore + 25
   ResetCollectiblePos(collectibleNum)

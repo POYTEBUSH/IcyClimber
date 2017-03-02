@@ -48,7 +48,7 @@ function MainGameMousePressed(x, y, button)
   
   --run the player touch/click function
   PlayerMousePressed(x, y, button)
-  
+  GameUIMousePressed(x, y, button)
 end
 
 function MainGameMouseReleased(x, y, button)
