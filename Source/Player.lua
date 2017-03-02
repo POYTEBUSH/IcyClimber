@@ -1,11 +1,11 @@
 function PlayerLoad()
   
-  playerSprite = love.graphics.newImage("Sprites/Player.png") 
+  playerSprite = love.graphics.newImage("Sprites/Player2.png") 
   
   playerPosX = 25
   playerPosY = 280
-  playerWidth = 60
-  playerHeight = 100
+  playerWidth = 90
+  playerHeight = 95
   
   playerState = "onLeftWall"
   

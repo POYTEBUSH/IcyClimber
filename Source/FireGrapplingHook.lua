@@ -1,6 +1,6 @@
 function LoadGrapplingHook()
   
-  playerArmSprite = love.graphics.newImage("Sprites/PlayerArm.png")
+  --playerArmSprite = love.graphics.newImage("Sprites/PlayerArm.png")
   armWidth = 20
   armHeight = 50
   armPosX = playerPosX + (playerWidth / 2) - (armWidth / 2)
@@ -8,7 +8,7 @@ function LoadGrapplingHook()
   armAngle = math.rad(0)
   
   hookPosX = playerPosX + (playerWidth / 2)
-  hookPosY = playerPosY + (playerHeight / 2)
+  hookPosY = playerPosY + (playerHeight / 2) + 30
   hookWidth = 20
   hookHeight = 30
   hookSprite = love.graphics.newImage("Sprites/GrapplingHook.png")
@@ -33,7 +33,7 @@ function UpdateGrapplingHook(dt)
   
   if (playerState == "onLeftWall" or playerState == "onRightWall") then
     hookPosX = playerPosX + (playerWidth / 2)
-    hookPosY = playerPosY + (playerHeight / 2)
+    hookPosY = playerPosY + (playerHeight / 2) + 30
     hookState = "notInUse"
     
     fireVector.x = 0
@@ -123,5 +123,5 @@ function DrawGrapplingHook()
   end
   
   love.graphics.draw(hookSprite, hookPosX, hookPosY, angle, 1, 1, hookWidth / 2, hookHeight / 2)
-  love.graphics.draw(playerArmSprite, armPosX, armPosY)
+  --love.graphics.draw(playerArmSprite, armPosX, armPosY)
 end
