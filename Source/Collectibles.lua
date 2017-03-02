@@ -16,10 +16,11 @@ function CollectiblesLoad()
   speedModifierEnd = 0
   
   shield = false
+  slow = false
 
   --Initialises collectibles
   for i=1, amountOfCollectibles do
-    table.insert(collectibles, {image = collectibleImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false, typec = math.random(1,3) })
+    table.insert(collectibles, {image = collectibleImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false, typec = i })
   end
   
 end
@@ -61,6 +62,7 @@ function CollectiblesUpdate(dt)
   --Ends the slowdown powerup
   if timer > speedModifierEnd then
     speedModifier = 1
+    slow = false
   end
   
 end
@@ -77,6 +79,7 @@ end
 --Handles picking up collectibles
 function CollectiblePickup(collectibleNum)
   if collectibles[collectibleNum].typec == 1 then
+    slow = true
     speedModifier = 0.5
     speedModifierEnd = timer + speedModifierLength
   elseif collectibles[collectibleNum].typec == 2 then
