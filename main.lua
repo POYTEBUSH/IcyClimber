@@ -113,7 +113,7 @@ end
 
 function love.mousereleased(x, y, button)
   x = x/scaleX
-  y= y/scaleY
+  y = y/scaleY
   if gameState == "startScreen" then
     
   elseif gameState == "game" then
