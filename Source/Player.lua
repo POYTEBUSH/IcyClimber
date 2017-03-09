@@ -30,10 +30,8 @@ function PlayerUpdate(dt)
 end
 
 function PlayerDraw()
-  love.graphics.draw(playerSprite, playerPosX, playerPosY)
-  
   DrawGrapplingHook()
-  
+  love.graphics.draw(playerSprite, playerPosX, playerPosY)
 end
 
 function PlayerMousePressed(x, y, button)

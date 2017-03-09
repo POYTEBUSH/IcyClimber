@@ -84,7 +84,7 @@ function UpdateGrapplingHook(dt)
     if (hookPosX > 270 and playerPosX >= 455) then
       playerState = "onRightWall"
       hookState = "notInUse"
-      playerPosX = 455
+      playerPosX = 430
     end
     
     --check if player as reached left wall
@@ -103,7 +103,7 @@ function UpdateGrapplingHook(dt)
   rope = 
   {
     playerPosX + (playerWidth / 2), 
-    playerPosY + (playerHeight / 3), 
+    playerPosY + (playerHeight / 2), 
     hookPosX, 
     hookPosY
   }
