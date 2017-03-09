@@ -37,7 +37,7 @@ end
 
 
 function GameUIMousePressed(x, y, button)
-  if mouseRectCollide(x, y, button, slowButtonX, slowButtonY, 40, 40, 1) then
+  if mouseRectCollide(x, y, button, slowButtonX, slowButtonY, 80, 80, 1) then
     slowDown = false
     CollectiblePickup(4)
   end
