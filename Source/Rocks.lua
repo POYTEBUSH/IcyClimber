@@ -9,7 +9,7 @@ function RocksLoad()
 
   --Initialises rocks
   for i=1, amountOfRocks do
-    table.insert(rocks, {image = rockImage, x = 238, y = -100, size = 256 * rockScale, speed = 0, active = false })
+    table.insert(rocks, {image = rockImage, x = 238, y = -100, rot = math.random(1,10), size = 256 * rockScale, speed = 0, active = false })
   end
   rocks[1].active = true
   
@@ -22,6 +22,7 @@ function RocksUpdate(dt)
     --Moves active rocks
     if r.active == true then
       r.y = r.y + (r.speed * speedModifier)
+      r.rot = r.rot + 0.05
     end
     
     --Resets rocks when off screen
@@ -53,12 +54,14 @@ function RocksUpdate(dt)
     ResetRockPos(math.floor(timer/rockSpawnTime))
     rockSpawnTime = rockSpawnTime * 1.5
   end
+  
+
 end
 
 function RocksDraw()
   --Draws rocks
   for i,r in ipairs(rocks) do
-    love.graphics.draw(r.image, r.x, r.y, 0, rockScale, rockScale)
+    love.graphics.draw(r.image, r.x, r.y, r.rot, rockScale, rockScale, 128, 128)
   end
   
 end
