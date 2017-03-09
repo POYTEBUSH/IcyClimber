@@ -1,5 +1,6 @@
 function MenuLoad()
   playButton = love.graphics.newImage("Sprites/PlayButton.png") 
+  shopButton = love.graphics.newImage("Sprites/ShopButton.png") 
   achievementsButton = love.graphics.newImage("Sprites/AchievementsButton.png") 
   optionsButton = love.graphics.newImage("Sprites/OptionsButton.png") 
   playButtonX = 120
@@ -18,8 +19,9 @@ end
 function MenuDraw()
   
   love.graphics.draw(playButton, playButtonX, playButtonY)
-  love.graphics.draw(achievementsButton, playButtonX, playButtonY + 150)
-  love.graphics.draw(optionsButton, playButtonX, playButtonY + 300)
+  love.graphics.draw(shopButton, playButtonX, playButtonY + 150)
+  love.graphics.draw(achievementsButton, playButtonX, playButtonY + 300)
+  love.graphics.draw(optionsButton, playButtonX, playButtonY + 450)
 end
 
 function MenuMousePressed(x, y, button)
