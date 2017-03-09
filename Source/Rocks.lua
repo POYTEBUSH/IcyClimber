@@ -9,7 +9,11 @@ function RocksLoad()
 
   --Initialises rocks
   for i=1, amountOfRocks do
+<<<<<<< HEAD
     table.insert(rocks, {image = rockImage, x = 238, y = -100, rot = 0, size = 256 * rockScale, speed = 0, active = false })
+=======
+    table.insert(rocks, {image = rockImage, x = 238, y = -100, rot = math.random(1,10), size = 256 * rockScale, speed = 0, active = false })
+>>>>>>> Oakley
   end
   rocks[1].active = true
   
@@ -22,7 +26,11 @@ function RocksUpdate(dt)
     --Moves active rocks
     if r.active == true then
       r.y = r.y + (r.speed * speedModifier)
+<<<<<<< HEAD
       --r.rot = r.rot + 1
+=======
+      r.rot = r.rot + 0.05
+>>>>>>> Oakley
     end
     
     --Resets rocks when off screen
@@ -55,12 +63,18 @@ function RocksUpdate(dt)
     ResetRockPos(math.floor(timer/rockSpawnTime))
     rockSpawnTime = rockSpawnTime * 1.5
   end
+  
+
 end
 
 function RocksDraw()
   --Draws rocks
   for i,r in ipairs(rocks) do
+<<<<<<< HEAD
     love.graphics.draw(r.image, r.x, r.y, r.rot, rockScale, rockScale)
+=======
+    love.graphics.draw(r.image, r.x, r.y, r.rot, rockScale, rockScale, 128, 128)
+>>>>>>> Oakley
   end
   
 end
