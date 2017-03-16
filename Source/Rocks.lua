@@ -5,7 +5,7 @@ function RocksLoad()
   rockSpawnTime = 2
   amountOfRocks = 6
   rockScore = 0
-  rockScale = 0.25
+  rockScale = 0.18
 
   --Initialises rocks
   for i=1, amountOfRocks do
@@ -69,7 +69,7 @@ end
 
 --Sets position and speed of rocks
 function ResetRockPos(rockNum)
-  rocks[rockNum].x = math.random(90, 360)
+  rocks[rockNum].x = math.random(120, 360)
   rocks[rockNum].y = -400
   rocks[rockNum].speed = fallingSpeed * (0.1 * math.random(20, 40))
 end

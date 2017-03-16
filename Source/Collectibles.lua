@@ -2,10 +2,16 @@ function CollectiblesLoad()
   
   collectibles = {}
   collectibleImage = love.graphics.newImage("Sprites/Snowball.png")
+  powerUpImageList = {}
+  for i, file in ipairs(love.filesystem.getDirectoryItems("Sprites/PowerUps")) do
+    image = love.graphics.newImage("Sprites/PowerUps/" .. file)
+    table.insert(powerUpImageList, image)
+  end
+  
   collectibleSpawnTime = 5
   amountOfCollectibles = 3
   collectibleScore = 0
-  collectibleScale = 0.25
+  collectibleScale = 0.2
   speedModifier = 1
   coins = 0
   
@@ -20,7 +26,7 @@ function CollectiblesLoad()
 
   --Initialises collectibles
   for i=1, amountOfCollectibles do
-    table.insert(collectibles, {image = collectibleImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false })
+    table.insert(collectibles, {image = slowDownImage, x = 238, y = -100, size = 256 * collectibleScale, speed = 0, active = false })
   end
   
 end
@@ -41,12 +47,12 @@ function CollectiblesUpdate(dt)
     
     --Handles collision between collectibles and player
     if BoxCollision(c.x, c.y, c.size, c.size, playerPosX, playerPosY, playerWidth, playerHeight) == true then
-      CollectiblePickup(1)
+      CollectiblePickup(i)
     end
     
     --Handles collision between collectibles and hook
     if BoxCollision(c.x, c.y, c.size, c.size, hookPosX, hookPosY, hookWidth, hookHeight) == true then
-      CollectiblePickup(1)
+      CollectiblePickup(i)
     end
     
   end 
@@ -67,9 +73,12 @@ end
 
 function CollectiblesDraw()
   --Draws collectibles
-  love.graphics.setColor(0, 0, 255)
+  if shield == true then
+    love.graphics.draw(powerUpImageList[2], playerPosX + 20, playerPosY - 40, 0.5, 0.5)
+  end
+  
   for i,c in ipairs(collectibles) do
-    love.graphics.draw(c.image, c.x, c.y, 0, collectibleScale, collectibleScale)
+    love.graphics.draw(powerUpImageList[i], c.x, c.y, 0, collectibleScale, collectibleScale)
   end
   
 end
