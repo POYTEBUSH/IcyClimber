@@ -3,6 +3,8 @@ function GameUILoad()
   snow = love.graphics.newImage("Sprites/SnowFloor.png") 
   
   slowButton = love.graphics.newImage("Sprites/SlowDownButton.png")
+  slowButtonNoHand = love.graphics.newImage("Sprites/SlowDownButtonNoHand.png")
+  clockHand = love.graphics.newImage("Sprites/clockHand.png")
   
   snowPanelX = 0
   snowPanelY = 0 
@@ -24,8 +26,10 @@ function GameUIDraw()
   end
   
   if speedModifier == 0.5 then
-    love.graphics.setColor(0, 128, 0)
-    love.graphics.rectangle("fill", 270, windowHeight - 48, 10 * (speedModifierEnd - timer), 15)
+    love.graphics.draw(slowButtonNoHand, slowButtonX, slowButtonY, 0, 0.4, 0.4)
+    love.graphics.setColor(255, 0, 0)
+    love.graphics.draw(clockHand, slowButtonX + 40, slowButtonY + 40, (timer - speedModifierEnd + 40.2) / 1.6, 0.4, 0.4, 100, 100)
+    
   end
   
   love.graphics.setColor(0,0,0)
@@ -42,8 +46,10 @@ end
 
 
 function GameUIMousePressed(x, y, button)
-  if mouseRectCollide(x, y, button, slowButtonX, slowButtonY, 80, 80, 1) then
-    slowDown = false
-    CollectiblePickup(4)
+  if slowDown == true then
+    if mouseRectCollide(x, y, button, slowButtonX, slowButtonY, 80, 80, 1) then
+      slowDown = false
+      CollectiblePickup(4)
+    end
   end
 end
