@@ -23,6 +23,11 @@ function GameUIDraw()
     love.graphics.draw(slowButton, slowButtonX, slowButtonY, 0, 0.4, 0.4)
   end
   
+  if speedModifier == 0.5 then
+    love.graphics.setColor(0, 128, 0)
+    love.graphics.rectangle("fill", 270, windowHeight - 48, 10 * (speedModifierEnd - timer), 15)
+  end
+  
   love.graphics.setColor(0,0,0)
   love.graphics.print("Score: " .. score, 50, windowHeight - 96, 0, 2, 2)
   

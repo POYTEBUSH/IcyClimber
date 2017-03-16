@@ -47,12 +47,12 @@ function CollectiblesUpdate(dt)
     
     --Handles collision between collectibles and player
     if BoxCollision(c.x, c.y, c.size, c.size, playerPosX, playerPosY, playerWidth, playerHeight) == true then
-      CollectiblePickup(i)
+      CollectiblePickup(1)
     end
     
     --Handles collision between collectibles and hook
     if BoxCollision(c.x, c.y, c.size, c.size, hookPosX, hookPosY, hookWidth, hookHeight) == true then
-      CollectiblePickup(i)
+      CollectiblePickup(1)
     end
     
   end 
@@ -76,6 +76,7 @@ function CollectiblesDraw()
   if shield == true then
     love.graphics.draw(powerUpImageList[2], playerPosX + 20, playerPosY - 40, 0.5, 0.5)
   end
+  
   
   for i,c in ipairs(collectibles) do
     love.graphics.draw(powerUpImageList[i], c.x, c.y, 0, collectibleScale, collectibleScale)
