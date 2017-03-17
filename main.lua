@@ -2,6 +2,9 @@ function love.load()
 
   windowWidth = 540
   windowHeight = 960
+  
+  scoreFont = love.graphics.newFont("Fonts/baveuse.ttf", 25)
+  font = love.graphics.newFont("Fonts/baveuse.ttf", 12)
 
   if love.system.getOS() == "Android" then
     local x, y = love.graphics.getDimensions()

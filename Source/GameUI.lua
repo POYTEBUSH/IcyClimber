@@ -28,18 +28,20 @@ function GameUIDraw()
   if speedModifier == 0.5 then
     love.graphics.draw(slowButtonNoHand, slowButtonX, slowButtonY, 0, 0.4, 0.4)
     love.graphics.draw(clockHand, slowButtonX + 40, slowButtonY + 40, (timer - speedModifierEnd + 40.2) / 1.6, 0.4, 0.4, 100, 100)    
-  end
+  end  
   
-  love.graphics.setColor(0,0,0)
-  love.graphics.print("Score: " .. score, 20, windowHeight - 65, 0, 2, 2)
+  love.graphics.setFont(scoreFont)
+  
+  love.graphics.print(score, 15, windowHeight - 70, 0, 2, 2)
+    
+  love.graphics.setFont(font)
   
   if shield == true then
     love.graphics.print("Shield" , 270, windowHeight - 100, 0, 2, 2)
   end
   
-  love.graphics.print("Coins: " .. coins, 20, windowHeight - 40, 0, 2, 2)
+  love.graphics.print("Coins: " .. coins, 100, windowHeight - 50, 0, 2, 2)
   
-  love.graphics.setColor(255,255,255)
 end
 
 function GameUIMousePressed(x, y, button)
