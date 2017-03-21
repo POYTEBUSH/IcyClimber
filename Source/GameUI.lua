@@ -30,6 +30,8 @@ function GameUIDraw()
     love.graphics.draw(clockHand, slowButtonX + 40, slowButtonY + 40, (timer - speedModifierEnd + 40.2) / 1.6, 0.4, 0.4, 100, 100)    
   end  
   
+  love.graphics.setColor(18, 100, 161)
+  
   love.graphics.setFont(scoreFont)
   
   love.graphics.print(score, 15, windowHeight - 70, 0, 2, 2)

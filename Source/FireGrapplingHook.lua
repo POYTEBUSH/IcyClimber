@@ -23,7 +23,7 @@ function LoadGrapplingHook()
 end
 
 function UpdateGrapplingHook(dt)
-  
+
   if (hookState == "notInUse") then
     angle = math.rad(180)
     armAngle = math.rad(0)
@@ -40,7 +40,7 @@ function UpdateGrapplingHook(dt)
     fireVector.y = 0
   end
   
-  if (playerState == "grappling" and hookState == "notInUse") then
+  if ((playerState == "grapplingLeft" or playerState == "grapplingRight") and hookState == "notInUse") then
     --Calculate target vector
     fireVector.x = grappleTarget.x - hookPosX
     fireVector.y = grappleTarget.y - hookPosY

@@ -1,63 +1,83 @@
 mouse = {}
 
-function shopload()    
+function ShopLoad()    
   
   money = 500
   
-  upgrade1Bought = false
-  upgrade2Bought = false
+  backButton = love.graphics.newImage("sprites/backbutton.png")
   
-  buyButton2 = love.graphics.newImage("sprites/blankLongButton.png") -- change to buy button image + placeholder button image
-    
-  boughtButton1 = love.graphics.newImage("sprites/upgradeBoughtButton.png") -- placeholder button image  
-    
-  buyButton1 = love.graphics.newImage("sprites/blankLongButton.png") -- change to buy button image + placeholder button image
-    
-  boughtButton2 = love.graphics.newImage("sprites/upgradeBoughtButton.png") -- placeholder button image
- 
+  buyButton = love.graphics.newImage("sprites/shopitem.png")   
+  boughtButton = love.graphics.newImage("sprites/shopitemowned.png")
+  buttonW = 175
+  buttonH = 225
   
-  buyButton1PosX = 222/2
-  buyButton1PosY = 600/2  
-  buyButton2PosX = 222/2
-  buyButton2PosY = 800/2
-  boughtButton1PosX = 222/2
-  boughtButton1PosY = 600/2           -- Problem! Can only click one button! Fix!
-  boughtButton2PosX = 222/2
-  boughtButton2PosY = 800/2
+  item1 = {}
+  item1.upgradeBought = false
+  item1.x = 100
+  item1.y = 150
   
-  end
+  item2 = {}
+  item2.upgradeBought = false
+  item2.x = 275
+  item2.y = 150
+  
+  item3 = {}
+  item3.upgradeBought = false
+  item3.x = 100
+  item3.y = 375
+  
+  item4 = {}
+  item4.upgradeBought = false
+  item4.x = 275
+  item4.y = 375
+  
+  item5 = {}
+  item5.upgradeBought = false
+  item5.x = 100
+  item5.y = 600
+  
+  item6 = {}
+  item6.upgradeBought = false
+  item6.x = 275
+  item6.y = 600
+end
 
-function shopupdate ()
+function ShopUpdate ()
+  
   mouseX = love.mouse.getX()
   mouseY = love.mouse.getY()
+end
+
+function ShopDraw()
+  love.graphics.draw(backButton, 25, 25)
   
-    checkBuy1 = CheckCollision(mouseX, mouseY, 1, 1, buyButton1PosX, buyButton1PosY, 144, 64)  
-    checkBuy2 = CheckCollision(mouseX, mouseY, 1, 1, buyButton2PosX, buyButton2PosY, 144, 64)    
+  if(item1.upgradeBought == false) then love.graphics.draw(buyButton, item1.x, item1.y) else love.graphics.draw(boughtButton, item1.x, item1.y) end
+  if(item2.upgradeBought == false) then love.graphics.draw(buyButton, item2.x, item2.y) else love.graphics.draw(boughtButton, item2.x, item2.y) end
+  if(item3.upgradeBought == false) then love.graphics.draw(buyButton, item3.x, item3.y) else love.graphics.draw(boughtButton, item3.x, item3.y) end
+  if(item4.upgradeBought == false) then love.graphics.draw(buyButton, item4.x, item4.y) else love.graphics.draw(boughtButton, item4.x, item4.y) end 
+  if(item5.upgradeBought == false) then love.graphics.draw(buyButton, item5.x, item5.y) else love.graphics.draw(boughtButton, item5.x, item5.y) end
+  if(item6.upgradeBought == false) then love.graphics.draw(buyButton, item6.x, item6.y) else love.graphics.draw(boughtButton, item6.x, item6.y) end  
 end
 
-function shopdraw()
-  --game_screen()
-   if main == false then        
-    love.graphics.draw(buyButton1, buyButton1PosX, buyButton1PosY)
-    love.graphics.draw(buyButton2, buyButton2PosX, buyButton2PosY)
-    if upgrade1Bought == true then
-      love.graphics.draw(boughtButton1, boughtButton1PosX, boughtButton1PosY)
-    end
-    if upgrade2Bought == true then
-      love.graphics.draw(boughtButton2, boughtButton2PosX, boughtButton2PosY)
-    end
+function ShopMousePressed(x, y, button)  
+  if mouseRectCollide(x,y,button,item1.x,item1.y,buttonW,buttonH,1) then
+    item1.upgradeBought = not item1.upgradeBought
   end
-end
-
-function Mousepressed(mx, my, button)
-  if (button == 1 and checkBuy1 and money >= 500 and upgrade1Bought == false) then  
-    upgrade1Bought = true
-    money = money - 500      
+  if mouseRectCollide(x,y,button,item2.x,item2.y,buttonW,buttonH,1) then
+    item2.upgradeBought = not item2.upgradeBought
   end
-  if (button == 1 and checkBuy2 and money >= 250 and upgrade2Bought == false) then    
-    upgrade2Bought = true
-    money = money - 250
-  end 
+  if mouseRectCollide(x,y,button,item3.x,item3.y,buttonW,buttonH,1) then
+    item3.upgradeBought = not item3.upgradeBought
+  end
+  if mouseRectCollide(x,y,button,item4.x,item4.y,buttonW,buttonH,1) then
+    item4.upgradeBought = not item4.upgradeBought
+  end
+  if mouseRectCollide(x,y,button,item5.x,item5.y,buttonW,buttonH,1) then
+    item5.upgradeBought = not item5.upgradeBought
+  end
+  if mouseRectCollide(x,y,button,item6.x,item6.y,buttonW,buttonH,1) then
+    item6.upgradeBought = not item6.upgradeBought
+  end
 end
 
 function game_screen() 

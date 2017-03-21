@@ -22,7 +22,7 @@ function love.load()
   require "Source/CollisionHandler"
   require "Source/Gameover"
   require "Source/FallingSnow"
-  
+  require "Source/Shop"
 
   gameState = "startScreen"
   
@@ -43,18 +43,18 @@ function love.draw()
   love.graphics.setColor(255, 255, 255)
   FallingSnowDraw()
   
-  if(gameState == "startScreen") then
-    
+  if(gameState == "startScreen") then    
     MenuDraw()
     
-  elseif(gameState == "game") then
-    
+  elseif(gameState == "game") then    
     MainGameDraw() 
     
-  elseif(gameState == "death") then
-    
+  elseif(gameState == "death") then    
     GameOverDraw()
-
+    
+  elseif(gameState == "shopping") then  
+    ShopDraw()
+    
   end
   
 end
@@ -63,18 +63,17 @@ function love.update(dt)
 
   FallingSnowUpdate(dt)
   
-  if(gameState == "startScreen") then
-    
+  if(gameState == "startScreen") then    
       MenuUpdate(dt)
     
   elseif(gameState == "game") then
-
-    MainGameUpdate(dt)
+    MainGameUpdate(dt)    
     
-    
-  elseif(gameState == "death") then
-    
+  elseif(gameState == "death") then    
     GameOverUpdate(dt)
+    
+  elseif(gameState == "shopping") then    
+    ShopUpdate(dt)
     
   end
 
@@ -88,7 +87,9 @@ function love.mousepressed(x, y, button)
   elseif gameState == "game" then
     MainGameMousePressed(x, y, button)
   elseif gameState == "death" then
-    GameOverMousePressed(x, y, button) 
+    GameOverMousePressed(x, y, button)
+  elseif gameState == "shopping" then
+    ShopMousePressed(x, y, button) 
   end
 end
 
@@ -101,6 +102,8 @@ function love.touchpressed(id, x,y, dx, dy, pressure)
     MainGameMousePressed(x, y, 1)
   elseif gameState == "death" then
     GameOverMousePressed(x, y, 1) 
+  elseif gameState == "shopping" then
+    ShopMousePressed(x, y, button) 
   end
 end
 
