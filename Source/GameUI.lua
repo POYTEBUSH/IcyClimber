@@ -4,7 +4,7 @@ function GameUILoad()
   
   slowButton = love.graphics.newImage("Sprites/SlowDownButton.png")
   slowButtonNoHand = love.graphics.newImage("Sprites/SlowDownButtonNoHand.png")
-  clockHand = love.graphics.newImage("Sprites/clockHand.png")
+  clockHand = love.graphics.newImage("Sprites/ClockHand.png")
   
   snowPanelX = 0
   snowPanelY = 0 

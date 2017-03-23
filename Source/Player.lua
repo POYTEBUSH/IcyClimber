@@ -7,7 +7,9 @@ function PlayerLoad()
   playerArmR = love.graphics.newImage("Sprites/PlayerMainArmR.png")
   playerArmL = love.graphics.newImage("Sprites/PlayerMainArmL.png") 
   playerLeft = love.graphics.newImage("Sprites/PlayerMainL.png") 
-  playerRight = love.graphics.newImage("Sprites/PlayerMainR.png") 
+  playerRight = love.graphics.newImage("Sprites/PlayerMainR.png")   
+  
+  ControlLock = false
   
   playerPosX = 25
   playerPosY = 280

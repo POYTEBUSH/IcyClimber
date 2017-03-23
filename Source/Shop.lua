@@ -4,10 +4,10 @@ function ShopLoad()
   
   money = 500
   
-  backButton = love.graphics.newImage("sprites/backbutton.png")
+  backButton = love.graphics.newImage("sprites/BackButton.png")
   
-  buyButton = love.graphics.newImage("sprites/shopitem.png")   
-  boughtButton = love.graphics.newImage("sprites/shopitemowned.png")
+  buyButton = love.graphics.newImage("sprites/ShopItem.png")   
+  boughtButton = love.graphics.newImage("sprites/ShopItemOwned.png")
   buttonW = 175
   buttonH = 225
   
@@ -77,6 +77,10 @@ function ShopMousePressed(x, y, button)
   end
   if mouseRectCollide(x,y,button,item6.x,item6.y,buttonW,buttonH,1) then
     item6.upgradeBought = not item6.upgradeBought
+  end
+  if mouseRectCollide(x,y,button,25,24,100,100,1) then
+    MenuLoad()
+    gameState = "startScreen"
   end
 end
 
