@@ -14,6 +14,7 @@ function UpdateSound(gameState)
   end
   if gameState == "startScreen" then
   loop = false
+  GamePlaySound:stop()
     
   end
   
