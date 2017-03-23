@@ -11,35 +11,13 @@ function ShopLoad()
   buttonW = 175
   buttonH = 225
   
-  item1 = {}
-  item1.upgradeBought = false
-  item1.x = 100
-  item1.y = 150
-  
-  item2 = {}
-  item2.upgradeBought = false
-  item2.x = 275
-  item2.y = 150
-  
-  item3 = {}
-  item3.upgradeBought = false
-  item3.x = 100
-  item3.y = 375
-  
-  item4 = {}
-  item4.upgradeBought = false
-  item4.x = 275
-  item4.y = 375
-  
-  item5 = {}
-  item5.upgradeBought = false
-  item5.x = 100
-  item5.y = 600
-  
-  item6 = {}
-  item6.upgradeBought = false
-  item6.x = 275
-  item6.y = 600
+  items = {}
+  table.insert(items,{ bought = false, x = 100, y = 150})
+  table.insert(items,{ bought = false, x = 275, y = 150})
+  table.insert(items,{ bought = false, x = 100, y = 375})
+  table.insert(items,{ bought = false, x = 275, y = 375})
+  table.insert(items,{ bought = false, x = 100, y = 600})
+  table.insert(items,{ bought = false, x = 275, y = 600})
 end
 
 function ShopUpdate ()
@@ -51,33 +29,23 @@ end
 function ShopDraw()
   love.graphics.draw(backButton, 25, 25)
   
-  if(item1.upgradeBought == false) then love.graphics.draw(buyButton, item1.x, item1.y) else love.graphics.draw(boughtButton, item1.x, item1.y) end
-  if(item2.upgradeBought == false) then love.graphics.draw(buyButton, item2.x, item2.y) else love.graphics.draw(boughtButton, item2.x, item2.y) end
-  if(item3.upgradeBought == false) then love.graphics.draw(buyButton, item3.x, item3.y) else love.graphics.draw(boughtButton, item3.x, item3.y) end
-  if(item4.upgradeBought == false) then love.graphics.draw(buyButton, item4.x, item4.y) else love.graphics.draw(boughtButton, item4.x, item4.y) end 
-  if(item5.upgradeBought == false) then love.graphics.draw(buyButton, item5.x, item5.y) else love.graphics.draw(boughtButton, item5.x, item5.y) end
-  if(item6.upgradeBought == false) then love.graphics.draw(buyButton, item6.x, item6.y) else love.graphics.draw(boughtButton, item6.x, item6.y) end  
+  for i,item in ipairs(items) do
+    if(item.bought == false) then 
+      love.graphics.draw(buyButton, item.x, item.y) 
+    else 
+      love.graphics.draw(boughtButton, item.x, item.y) 
+    end
+  end
 end
 
 function ShopMousePressed(x, y, button)  
-  if mouseRectCollide(x,y,button,item1.x,item1.y,buttonW,buttonH,1) then
-    item1.upgradeBought = not item1.upgradeBought
+  
+  for i,item in ipairs(items) do
+    if mouseRectCollide(x,y,button,item.x,item.y,buttonW,buttonH,1) and (item.bought == false) then
+      item.bought = not item.bought
+    end
   end
-  if mouseRectCollide(x,y,button,item2.x,item2.y,buttonW,buttonH,1) then
-    item2.upgradeBought = not item2.upgradeBought
-  end
-  if mouseRectCollide(x,y,button,item3.x,item3.y,buttonW,buttonH,1) then
-    item3.upgradeBought = not item3.upgradeBought
-  end
-  if mouseRectCollide(x,y,button,item4.x,item4.y,buttonW,buttonH,1) then
-    item4.upgradeBought = not item4.upgradeBought
-  end
-  if mouseRectCollide(x,y,button,item5.x,item5.y,buttonW,buttonH,1) then
-    item5.upgradeBought = not item5.upgradeBought
-  end
-  if mouseRectCollide(x,y,button,item6.x,item6.y,buttonW,buttonH,1) then
-    item6.upgradeBought = not item6.upgradeBought
-  end
+
   if mouseRectCollide(x,y,button,25,24,100,100,1) then
     MenuLoad()
     gameState = "startScreen"
