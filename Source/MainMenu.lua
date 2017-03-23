@@ -6,7 +6,7 @@ function MenuLoad()
   
   playButtonX = 95
   playButtonY = 500
-  playButtonW = 300
+  playButtonW = 375
   playButtonH = 100
   
   squareButtonW = 100
