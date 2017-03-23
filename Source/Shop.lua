@@ -4,6 +4,8 @@ function ShopLoad()
   
   money = 500
   
+  shopFont = love.graphics.newFont("Fonts/baveuse.ttf", 25)
+  
   backButton = love.graphics.newImage("sprites/BackButton.png")
   
   buyButton = love.graphics.newImage("sprites/ShopItem.png")   
