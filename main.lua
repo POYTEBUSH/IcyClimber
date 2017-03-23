@@ -23,6 +23,7 @@ function love.load()
   require "Source/Gameover"
   require "Source/FallingSnow"
   require "Source/Shop"
+  require "Source/Sounds"
 
   gameState = "startScreen"
   
@@ -34,6 +35,7 @@ function love.load()
   MainGameLoad()
   GameOverLoad()
   FallingSnowLoad()
+  SoundLoad()
 end
 
 function love.draw()
@@ -60,6 +62,8 @@ function love.draw()
 end
 
 function love.update(dt)
+
+  UpdateSound(gameState)
 
   FallingSnowUpdate(dt)
   
