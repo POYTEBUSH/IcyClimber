@@ -42,7 +42,7 @@ function GameUIDraw()
     love.graphics.print("Shield" , 270, windowHeight - 100, 0, 2, 2)
   end
   
-  love.graphics.print("Coins: " .. coins, 100, windowHeight - 50, 0, 2, 2)
+  love.graphics.print("Coins: " .. coins, 350, windowHeight - 50, 0, 2, 2)
   
 end
 

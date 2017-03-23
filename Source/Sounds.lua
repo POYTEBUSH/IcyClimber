@@ -3,7 +3,7 @@ function SoundLoad()
   GamePlaySound = love.audio.newSource("Sounds/GameplayMusic.mp3")
   DeathSound = love.audio.newSource("Sounds/Splat.ogg", "static")
   DeathSound:setLooping(false)
- loop = false
+  loop = false
  
 end
 

@@ -4,7 +4,7 @@ function ShopLoad()
   
   money = 500
   
-  shopFont = love.graphics.newFont("Fonts/baveuse.ttf", 25)
+  shopTitle = love.graphics.newImage("sprites/ShopTitle.png")
   
   backButton = love.graphics.newImage("sprites/BackButton.png")
   
@@ -30,6 +30,7 @@ end
 
 function ShopDraw()
   love.graphics.draw(backButton, 25, 25)
+  love.graphics.draw(shopTitle, 190, 35)
   
   for i,item in ipairs(items) do
     if(item.bought == false) then 
