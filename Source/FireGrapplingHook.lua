@@ -77,8 +77,8 @@ function UpdateGrapplingHook(dt)
     fireVector.y = fireVector.y / vecLength
     
     --Move player along vector
-    playerPosX = playerPosX + (fireVector.x * (pullSpeed * dt))
-    playerPosY = playerPosY + (fireVector.y * (pullSpeed * dt))
+    playerPosX = playerPosX + (fireVector.x * pullSpeed * dt)
+    playerPosY = playerPosY + (fireVector.y * pullSpeed * dt)
   
     --check if player as reached right wall
     if (hookPosX > 270 and playerPosX >= 455) then

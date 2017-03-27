@@ -22,7 +22,7 @@ function RocksUpdate(dt)
     --Moves active rocks
     if r.active == true then
       r.y = r.y + (r.speed * speedModifier)
-      r.rot = r.rot + 0.05
+      r.rot = r.rot + 3 * dt
     end
     
     --Resets rocks when off screen
