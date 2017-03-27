@@ -1,5 +1,11 @@
 function CollectiblesLoad()
   
+  require "Source/Sounds"
+  
+  
+  CollectableSoundLoad()
+  
+  
   collectibles = {}
   collectibleImage = love.graphics.newImage("Sprites/Snowball.png")
   powerUpImageList = {}
@@ -14,6 +20,7 @@ function CollectiblesLoad()
   collectibleScale = 0.2
   speedModifier = 1
   coins = 0
+  SoundPause = false
   
   --How long the slow down powerup lasts (in seconds)
   speedModifierLength = 10
@@ -47,13 +54,22 @@ function CollectiblesUpdate(dt)
     
     --Handles collision between collectibles and player
     if BoxCollision(c.x, c.y, c.size, c.size, playerPosX, playerPosY, playerWidth, playerHeight) == true then
+       if(SoundPause == false) then
+          CollectableSound()
+          SoundPause = true
+        end
       CollectiblePickup(1)
     end
     
     --Handles collision between collectibles and hook
     if BoxCollision(c.x, c.y, c.size, c.size, hookPosX, hookPosY, hookWidth, hookHeight) == true then
+      if(SoundPause == false) then
+          CollectableSound()
+          SoundPause = true
+        end
       CollectiblePickup(1)
     end
+    SoundPause = false
     
   end 
   
