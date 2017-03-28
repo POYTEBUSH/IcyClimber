@@ -54,26 +54,25 @@ function CollectiblesUpdate(dt)
     
     --Handles collision between collectibles and player
     if BoxCollision(c.x, c.y, c.size, c.size, playerPosX, playerPosY, playerWidth, playerHeight) == true then
-<<<<<<< HEAD
+
       CollectiblePickup(i)
-=======
+
        if(SoundPause == false) then
           CollectableSound()
           SoundPause = true
         end
->>>>>>> PeteM
+
     end
     
     --Handles collision between collectibles and hook
     if BoxCollision(c.x, c.y, c.size, c.size, hookPosX, hookPosY, hookWidth, hookHeight) == true then
-<<<<<<< HEAD
+
       CollectiblePickup(i)
-=======
+
       if(SoundPause == false) then
           CollectableSound()
           SoundPause = true
         end
->>>>>>> PeteM
     end
     SoundPause = false
     
