@@ -14,6 +14,7 @@ function UpdateSound(gameState)
   end
   if gameState == "startScreen" then
   loop = false
+  GamePlaySound:stop()
     
   end
   
@@ -27,8 +28,15 @@ function UpdateSound(gameState)
     
     
   end
-
-
-
-
 end
+function CollectableSoundLoad()
+    
+    DingSound = love.audio.newSource("Sounds/Ding.mp3")
+    ColletableLoop = false
+  
+end
+
+function CollectableSound()
+    DingSound:play()
+end
+
