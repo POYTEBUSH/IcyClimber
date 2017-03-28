@@ -8,9 +8,9 @@ function GameUILoad()
   
   snowPanelX = 0
   snowPanelY = 0 
-  
-  slowButtonX = 300
-  slowButtonY = 860
+  buttonScale = 0.3
+  slowButtonX = 250
+  slowButtonY = 893
 end
 
 function GameUIUpdate()
@@ -22,12 +22,12 @@ function GameUIDraw()
   love.graphics.draw(scoreBar, snowPanelX, snowPanelY) 
   
   if slowDown == true then
-    love.graphics.draw(slowButton, slowButtonX, slowButtonY, 0, 0.4, 0.4)
+    love.graphics.draw(slowButton, slowButtonX, slowButtonY, 0, buttonScale, buttonScale)
   end
   
   if speedModifier == 0.5 then
-    love.graphics.draw(slowButtonNoHand, slowButtonX, slowButtonY, 0, 0.4, 0.4)
-    love.graphics.draw(clockHand, slowButtonX + 40, slowButtonY + 40, (timer - speedModifierEnd + 40.2) / 1.6, 0.4, 0.4, 100, 100)    
+    love.graphics.draw(slowButtonNoHand, slowButtonX, slowButtonY, 0, buttonScale, buttonScale)
+    love.graphics.draw(clockHand, slowButtonX + 30, slowButtonY + 30, (timer - speedModifierEnd + 40.2) / 1.6, buttonScale, buttonScale, 100, 100)    
   end  
   
   love.graphics.setColor(18, 100, 161)
@@ -53,4 +53,5 @@ function GameUIMousePressed(x, y, button)
       CollectiblePickup(4)
     end
   end
+  origin = origin + 2
 end
