@@ -1,11 +1,11 @@
 mouse = {}
 
 function SettingsLoad()    
-  backButton = love.graphics.newImage("sprites/BackButton.png")
+  backButton = love.graphics.newImage("Sprites/BackButton.png")
   
   sound = true
-  soundButton = love.graphics.newImage("sprites/SoundButton.png")   
-  noSoundButton = love.graphics.newImage("sprites/NoSoundButton.png")
+  soundButton = love.graphics.newImage("Sprites/SoundButton.png")   
+  noSoundButton = love.graphics.newImage("Sprites/NoSoundButton.png")
   buttonW = 128
   buttonH = 128
 end

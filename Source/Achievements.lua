@@ -2,7 +2,7 @@ mouse = {}
 
 function AchievementsLoad()    
   
-  backButton = love.graphics.newImage("sprites/BackButton.png")
+  backButton = love.graphics.newImage("Sprites/BackButton.png")
   
 end
 
