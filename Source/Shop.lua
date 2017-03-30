@@ -4,12 +4,11 @@ function ShopLoad()
   
   money = 500
   
-  shopTitle = love.graphics.newImage("sprites/ShopTitle.png")
+  shopTitle = love.graphics.newImage("Sprites/ShopLogo.png")
+  backButton = love.graphics.newImage("Sprites/BackButton.png")
+  buyButton = love.graphics.newImage("Sprites/ShopItem.png")   
+  boughtButton = love.graphics.newImage("Sprites/ShopItemOwned.png")
   
-  backButton = love.graphics.newImage("sprites/BackButton.png")
-  
-  buyButton = love.graphics.newImage("sprites/ShopItem.png")   
-  boughtButton = love.graphics.newImage("sprites/ShopItemOwned.png")
   buttonW = 175
   buttonH = 225
   
@@ -49,8 +48,7 @@ function ShopMousePressed(x, y, button)
     end
   end
 
-  if mouseRectCollide(x,y,button,25,24,100,100,1) then
-    MenuLoad()
+  if mouseRectCollide(x ,y ,button, 25,24,100,100,1) then
     gameState = "startScreen"
   end
 end
