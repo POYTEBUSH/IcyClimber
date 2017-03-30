@@ -4,12 +4,12 @@ function ShopLoad()
   
   money = 500
   
-  shopTitle = love.graphics.newImage("sprites/ShopTitle.png")
+  shopTitle = love.graphics.newImage("Sprites/ShopTitle.png")
   
-  backButton = love.graphics.newImage("sprites/BackButton.png")
+  backButton = love.graphics.newImage("Sprites/BackButton.png")
   
-  buyButton = love.graphics.newImage("sprites/ShopItem.png")     
-  boughtButton = love.graphics.newImage("sprites/ShopItemOwned.png")
+  buyButton = love.graphics.newImage("Sprites/ShopItem.png")     
+  boughtButton = love.graphics.newImage("Sprites/ShopItemOwned.png")
   
   shopItemImageList = {}
   for i, file in ipairs(love.filesystem.getDirectoryItems("Sprites/ShopItems")) do
@@ -62,7 +62,6 @@ function ShopMousePressed(x, y, button)
   end
 
   if mouseRectCollide(x,y,button,25,24,100,100,1) then
-    MenuLoad()
     gameState = "startScreen"
   end
 end

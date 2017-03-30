@@ -115,9 +115,9 @@ function love.touchpressed(id, x,y, dx, dy, pressure)
   elseif gameState == "death" then
     GameOverMousePressed(x, y, 1) 
   elseif gameState == "shopping" then
-    ShopMousePressed(x, y, button) 
+    ShopMousePressed(x, y, 1) 
   elseif gameState == "settings" then
-    SettingsMousePressed(x, y, button) 
+    SettingsMousePressed(x, y, 1) 
   end
 end
 
