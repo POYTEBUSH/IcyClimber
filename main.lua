@@ -36,8 +36,6 @@ function love.load()
   GameOverLoad()
   FallingSnowLoad()
   SoundLoad()
-  ShopLoad()
-  
 end
 
 function love.draw()
@@ -53,7 +51,7 @@ function love.draw()
   elseif(gameState == "game") then    
     MainGameDraw() 
     
-  elseif(gameState == "death") then
+  elseif(gameState == "death") then    
     GameOverDraw()
     
   elseif(gameState == "shopping") then  
@@ -109,7 +107,7 @@ function love.touchpressed(id, x,y, dx, dy, pressure)
   elseif gameState == "death" then
     GameOverMousePressed(x, y, 1) 
   elseif gameState == "shopping" then
-    ShopMousePressed(x, y, 1) 
+    ShopMousePressed(x, y, button) 
   end
 end
 
