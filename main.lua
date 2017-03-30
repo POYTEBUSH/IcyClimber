@@ -22,6 +22,7 @@ function love.load()
   require "Source/CollisionHandler"
   require "Source/Gameover"
   require "Source/FallingSnow"
+  require "Source/Settings"
   require "Source/Shop"
   require "Source/Sounds"
 
@@ -32,9 +33,10 @@ function love.load()
     
   MenuLoad()
   MainGameLoad()
-  MainGameLoad()
   GameOverLoad()
   FallingSnowLoad()
+  SettingsLoad()
+  ShopLoad()
   SoundLoad()
 end
 
@@ -56,7 +58,9 @@ function love.draw()
     
   elseif(gameState == "shopping") then  
     ShopDraw()
-    
+  
+  elseif(gameState == "settings") then  
+    SettingsDraw()
   end
   
 end
@@ -78,7 +82,9 @@ function love.update(dt)
     
   elseif(gameState == "shopping") then    
     ShopUpdate(dt)
-    
+  
+  elseif(gameState == "settings") then    
+    SettingsUpdate(dt)
   end
 
 end
@@ -93,7 +99,9 @@ function love.mousepressed(x, y, button)
   elseif gameState == "death" then
     GameOverMousePressed(x, y, button)
   elseif gameState == "shopping" then
-    ShopMousePressed(x, y, button) 
+    ShopMousePressed(x, y, button)
+  elseif gameState == "settings" then
+    SettingsMousePressed(x, y, button) 
   end
 end
 
@@ -108,6 +116,8 @@ function love.touchpressed(id, x,y, dx, dy, pressure)
     GameOverMousePressed(x, y, 1) 
   elseif gameState == "shopping" then
     ShopMousePressed(x, y, button) 
+  elseif gameState == "settings" then
+    SettingsMousePressed(x, y, button) 
   end
 end
 

@@ -36,9 +36,14 @@ function MenuMousePressed(x, y, button)
   end
   
   if mouseRectCollide(x,y,button,playButtonX,playButtonY + 125,squareButtonW,squareButtonH,1) then
-    ShopLoad()
     gameState = "shopping"
   end
+  
+  if mouseRectCollide(x,y,button,playButtonX + 275, playButtonY + 125,squareButtonW,squareButtonH,1) then
+    gameState = "settings"
+  end
+  
+  
 end
 
 function MenukeyPressed(key)
