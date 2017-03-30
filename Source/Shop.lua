@@ -8,8 +8,15 @@ function ShopLoad()
   
   backButton = love.graphics.newImage("sprites/BackButton.png")
   
-  buyButton = love.graphics.newImage("sprites/ShopItem.png")   
+  buyButton = love.graphics.newImage("sprites/ShopItem.png")     
   boughtButton = love.graphics.newImage("sprites/ShopItemOwned.png")
+  
+  shopItemImageList = {}
+  for i, file in ipairs(love.filesystem.getDirectoryItems("Sprites/ShopItems")) do
+    image = love.graphics.newImage("Sprites/ShopItems/" .. file)
+    table.insert(shopItemImageList, image)
+  end
+  
   buttonW = 175
   buttonH = 225
   
@@ -20,6 +27,7 @@ function ShopLoad()
   table.insert(items,{ bought = false, x = 275, y = 375})
   table.insert(items,{ bought = false, x = 100, y = 600})
   table.insert(items,{ bought = false, x = 275, y = 600})
+    
 end
 
 function ShopUpdate ()
@@ -35,10 +43,14 @@ function ShopDraw()
   for i,item in ipairs(items) do
     if(item.bought == false) then 
       love.graphics.draw(buyButton, item.x, item.y) 
+      love.graphics.draw(shopItemImageList[i], item.x + 20, item.y + 25, 0, 1.5, 1.5)
     else 
       love.graphics.draw(boughtButton, item.x, item.y) 
+      love.graphics.draw(shopItemImageList[i], item.x + 20, item.y + 25, 0, 1.5, 1.5)
     end
   end
+  
+  
 end
 
 function ShopMousePressed(x, y, button)  
@@ -54,15 +66,3 @@ function ShopMousePressed(x, y, button)
     gameState = "startScreen"
   end
 end
-
-function game_screen() 
-
-end
-
-function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)
-  return x1 < x2+w2 and
-         x2 < x1+w1 and
-         y1 < y2+h2 and
-         y2 < y1+h1                 
-end
-
