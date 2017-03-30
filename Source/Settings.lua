@@ -1,7 +1,6 @@
 mouse = {}
 
 function SettingsLoad()    
- 
   backButton = love.graphics.newImage("sprites/BackButton.png")
   
   sound = true
@@ -12,7 +11,6 @@ function SettingsLoad()
 end
 
 function SettingsUpdate()
-  
   mouseX = love.mouse.getX()
   mouseY = love.mouse.getY()
 end

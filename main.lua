@@ -25,6 +25,8 @@ function love.load()
   require "Source/Settings"
   require "Source/Shop"
   require "Source/Sounds"
+  require "Source/ProgressBar"
+  require "Source/Achievements"
 
   gameState = "startScreen"
   
@@ -38,6 +40,9 @@ function love.load()
   SettingsLoad()
   ShopLoad()
   SoundLoad()
+  ProgressBarLoad()
+  AchievementsLoad()
+  
 end
 
 function love.draw()
@@ -61,6 +66,9 @@ function love.draw()
   
   elseif(gameState == "settings") then  
     SettingsDraw()
+  
+  elseif(gameState == "achievements") then  
+    AchievementsDraw()
   end
   
 end
@@ -85,6 +93,9 @@ function love.update(dt)
   
   elseif(gameState == "settings") then    
     SettingsUpdate(dt)
+  
+  elseif(gameState == "achievements") then    
+    AchievementsUpdate(dt)
   end
 
 end
@@ -102,6 +113,8 @@ function love.mousepressed(x, y, button)
     ShopMousePressed(x, y, button)
   elseif gameState == "settings" then
     SettingsMousePressed(x, y, button) 
+  elseif gameState == "achievements" then
+    AchievementsMousePressed(x, y, button) 
   end
 end
 
@@ -118,6 +131,8 @@ function love.touchpressed(id, x,y, dx, dy, pressure)
     ShopMousePressed(x, y, 1) 
   elseif gameState == "settings" then
     SettingsMousePressed(x, y, 1) 
+  elseif gameState == "achievements" then
+    AchievementsMousePressed(x, y, 1) 
   end
 end
 

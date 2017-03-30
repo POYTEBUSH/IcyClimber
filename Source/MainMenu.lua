@@ -43,6 +43,10 @@ function MenuMousePressed(x, y, button)
     gameState = "settings"
   end
   
+  if mouseRectCollide(x,y,button,playButtonX + 137.5, playButtonY + 125,squareButtonW,squareButtonH,1) then
+    gameState = "achievements"
+  end
+  
   
 end
 
