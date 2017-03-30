@@ -13,6 +13,10 @@ function GameOverDraw()
   love.graphics.draw(gameOverTxt, 0, 0)
   love.graphics.draw(yeti, windowWidth / 4, windowHeight - 300, 0, 0.5, 0.5) 
   love.graphics.draw(scoreBar, 0, 50) 
+  
+  love.graphics.print("Coins: " .. coins, 350, windowHeight - 50, 0, 2, 2)  love.graphics.setColor(18, 100, 161)  
+  love.graphics.setFont(scoreFont)  
+  love.graphics.print(score, 15, windowHeight - 70, 0, 2, 2)
 end
 
 function GameOverMousePressed(x, y, button)
