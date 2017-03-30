@@ -53,5 +53,4 @@ function GameUIMousePressed(x, y, button)
       CollectiblePickup(4)
     end
   end
-  origin = origin + 2
 end
