@@ -35,7 +35,7 @@ function RocksUpdate(dt)
     --Handles collision between rocks and player
     if BoxCollision(r.x - (r.size / 2), r.y - (r.size / 2), r.size, r.size, playerPosX + (playerWidth / 4), playerPosY + 10, playerWidth / 2, playerHeight - 20) == true then
       if shield == false then
-        love.filesystem.write('highscore.txt', score)
+        --love.filesystem.write("Files/HighScore.txt", score)
         gameState = "death"
       else
         ResetRockPos(i)

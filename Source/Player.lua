@@ -47,7 +47,7 @@ function PlayerUpdate(dt)
   --end
   
   if playerPosY > windowHeight - 86 then
-    love.filesystem.write('highscore.txt', score)
+    --love.filesystem.write("Files/HighScore.txt", score)
     gameState = "death"
   end
   
