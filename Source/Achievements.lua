@@ -7,7 +7,6 @@ function AchievementsLoad()
 end
 
 function AchievementsUpdate()
-  
   mouseX = love.mouse.getX()
   mouseY = love.mouse.getY()
   

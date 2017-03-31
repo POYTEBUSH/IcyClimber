@@ -17,6 +17,7 @@ end
 
 function RocksUpdate(dt)
   
+  
   for i,r in ipairs(rocks) do
     
     --Moves active rocks
@@ -34,6 +35,7 @@ function RocksUpdate(dt)
     --Handles collision between rocks and player
     if BoxCollision(r.x - (r.size / 2), r.y - (r.size / 2), r.size, r.size, playerPosX + (playerWidth / 4), playerPosY + 10, playerWidth / 2, playerHeight - 20) == true then
       if shield == false then
+        love.filesystem.write('highscore.txt', score)
         gameState = "death"
       else
         ResetRockPos(i)
@@ -60,6 +62,9 @@ function RocksUpdate(dt)
 end
 
 function RocksDraw()
+  
+  love.graphics.print(love.filesystem.read("highscore.txt"), 100, 0)
+  
   --Draws rocks
   for i,r in ipairs(rocks) do
      love.graphics.draw(r.image, r.x, r.y, r.rot, rockScale, rockScale, 128, 128)
