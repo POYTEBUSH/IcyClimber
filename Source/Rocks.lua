@@ -63,7 +63,7 @@ end
 
 function RocksDraw()
   
-  love.graphics.print(love.filesystem.read("highscore.txt"), 100, 0)
+  --love.graphics.print(love.filesystem.read("highscore.txt"), 100, 0)
   
   --Draws rocks
   for i,r in ipairs(rocks) do
