@@ -3,7 +3,7 @@ mouse = {}
 function AchievementsLoad()    
   
   backButton = love.graphics.newImage("Sprites/BackButton.png")
-  
+  achievementBack = love.graphics.newImage("Sprites/AchievementBackground.png")
 end
 
 function AchievementsUpdate()
@@ -16,6 +16,9 @@ end
 function AchievementsDraw()
   
   love.graphics.draw(backButton, 25, 25)
+  
+  love.graphics.draw(achievementBack, 5, 160)
+  
   love.graphics.setFont(scoreFont)
   for i,h in ipairs(heights) do
     love.graphics.print(h.name, 25, (i + 5) * 30)
