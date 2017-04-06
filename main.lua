@@ -4,6 +4,7 @@ function love.load()
   windowHeight = 960
   
   scoreFont = love.graphics.newFont("Fonts/baveuse.ttf", 25)
+  gameOverFont = love.graphics.newFont("Fonts/baveuse.ttf", 40)
   font = love.graphics.newFont("Fonts/baveuse.ttf", 12)
 
   if love.system.getOS() == "Android" then
