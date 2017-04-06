@@ -25,7 +25,6 @@ function love.load()
   require "Source/Settings"
   require "Source/Shop"
   require "Source/Sounds"
-  require "Source/ProgressBar"
   require "Source/Achievements"
 
   gameState = "startScreen"
@@ -40,7 +39,6 @@ function love.load()
   SettingsLoad()
   ShopLoad()
   SoundLoad()
-  ProgressBarLoad()
   AchievementsLoad()
   
 end

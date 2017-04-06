@@ -1,3 +1,4 @@
+Ground Level:0
 Notre Dame:69
 Taj Mahal:73
 Big Ben:96

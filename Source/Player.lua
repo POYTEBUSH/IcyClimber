@@ -32,18 +32,26 @@ function PlayerUpdate(dt)
   
   UpdateGrapplingHook(dt)
   
-  if (playerState == "onLeftWall" or playerState == "grapplingRight") then    
-      playerArmPosX = playerPosX + playerWidth + 2
+  if (playerState == "onLeftWall") then
+      playerArmPosX = playerPosX + playerWidth
+      playerArmPosY = playerPosY + 55
+  elseif (playerState == "grapplingRight") then    
+      playerArmPosX = playerPosX + playerWidth + 50
+      playerArmPosY = playerPosY + 55
   end
   
-  if (playerState == "onRightWall"  or playerState == "grapplingLeft") then    
+  if (playerState == "onRightWall") then
       playerArmPosX = playerPosX - 3
+      playerArmPosY = playerPosY + 55
+  elseif (playerState == "grapplingLeft") then    
+      playerArmPosX = playerPosX + 10
+      playerArmPosY = playerPosY - 5
   end
   
   --Once player is on wall, fall at same speed as the wall
   --if playerState == "onLeftWall" or playerState == "onRightWall" then
     playerPosY = playerPosY + (fallingSpeed * speedModifier)
-    playerArmPosY = playerPosY + 55
+    
   --end
   
   if playerPosY > windowHeight - 86 then

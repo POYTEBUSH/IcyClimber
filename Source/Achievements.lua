@@ -21,9 +21,14 @@ function AchievementsDraw()
   
   love.graphics.setFont(scoreFont)
   for i,h in ipairs(heights) do
-    love.graphics.print(h.name, 25, (i + 5) * 30)
-    love.graphics.print(h.h, 400, (i + 5) * 30)
+    love.graphics.setColor(230,230,230)
+    love.graphics.print(h.name, 30, (i + 5) * 30)
+    love.graphics.print(h.h, 395, (i + 5) * 30)
   end
+  love.graphics.rectangle("fill", 380, 180, 5, 475)
+  
+    love.graphics.setColor(255,255,255)
+
   
   love.graphics.setFont(font)
   
