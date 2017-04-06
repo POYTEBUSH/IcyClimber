@@ -1,9 +1,7 @@
 Ground Level:0
 Notre Dame:69
-Taj Mahal:73
 Big Ben:96
 London Eye:135
-Great Pyramid of Giza:139
 SpaceNeedle:184
 Eiffel Tower:300
 Empire State Building:381
