@@ -29,14 +29,22 @@ function UpdateSound(gameState)
     
   end
 end
-function CollectableSoundLoad()
-    
+function CollectableSoundLoad()   
     DingSound = love.audio.newSource("Sounds/Ding.mp3")
     ColletableLoop = false
-  
 end
-
 function CollectableSound()
     DingSound:play()
 end
+
+function RockSoundLoad()
+  Rock = love.audio.newSource("Sounds/RockSound.mp3")
+  
+end
+
+function RockSound()
+  Rock:play()
+end
+
+
 

@@ -1,4 +1,8 @@
-function RocksLoad()
+
+  function RocksLoad()
+ 
+    require "Source/Sounds"
+   RockSoundLoad()
   
   rocks = {}
   rockImage = love.graphics.newImage("Sprites/Snowball.png")
@@ -6,7 +10,7 @@ function RocksLoad()
   amountOfRocks = 6
   rockScore = 0
   rockScale = 0.18
-
+  rockSound = false
   --Initialises rocks
   for i=1, amountOfRocks do
     table.insert(rocks, {image = rockImage, x = 238, y = -100, rot = math.random(1,10), size = 256 * rockScale, speed = 0, active = false })
@@ -33,6 +37,10 @@ function RocksUpdate(dt)
     
     --Handles collision between rocks and player
     if BoxCollision(r.x - (r.size / 2), r.y - (r.size / 2), r.size, r.size, playerPosX + (playerWidth / 4), playerPosY + 10, playerWidth / 2, playerHeight - 20) == true then
+       if rockSound == false then
+        RockSound()
+        rockSound = true
+      end
       if shield == false then
         gameState = "death"
       else
@@ -43,9 +51,15 @@ function RocksUpdate(dt)
     
     --Handles collision between rocks and hook
     if BoxCollision(r.x - (r.size / 2), r.y - (r.size / 2), r.size, r.size, hookPosX, hookPosY, hookWidth, hookHeight) == true then
+      if rockSound == false then
+        RockSound()
+        rockSound = true
+      end
       ResetRockPos(i)
       rockScore = rockScore + 25
     end
+    
+    rockSound = false
     
   end 
   
