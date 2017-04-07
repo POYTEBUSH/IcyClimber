@@ -33,7 +33,11 @@ function GameUIDraw()
   love.graphics.setColor(18, 100, 161)
   
   love.graphics.setFont(scoreFont)
-  
+  love.graphics.print(progressBarX, 100, 50)
+  love.graphics.print(achievedFactor, 100, 80)
+  --love.graphics.print(scaleFactor, 100, 110)
+  love.graphics.print(achievedHeight, 100, 130)
+  love.graphics.print(targetHeight, 100, 150)
   love.graphics.print(score, 15, windowHeight - 70, 0, 2, 2)
     
   love.graphics.setFont(font)
