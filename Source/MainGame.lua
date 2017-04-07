@@ -12,9 +12,9 @@ function MainGameLoad()
   fallingSpeed = 120
   RocksLoad()
   GameUILoad()
-  ProgressBarLoad()
   CollectiblesLoad()
-
+  ProgressBarLoad()
+  
   heightClimbed = 0
   timer = 0
 end

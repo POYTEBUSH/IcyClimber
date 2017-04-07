@@ -2,7 +2,7 @@ function GameOverLoad()
   backButton = love.graphics.newImage("Sprites/BackButton.png")
   gameOverBack = love.graphics.newImage("Sprites/AchievementBackground.png")
   
-  yeti = love.graphics.newImage("Sprites/ShopYeti.png")
+  goYeti = love.graphics.newImage("Sprites/DeadYeti.png")
   --gameOverTxt = love.graphics.newImage("Sprites/GameOver.png")
 end
 
@@ -11,6 +11,8 @@ function GameOverUpdate(dt)
 end
 
 function GameOverDraw()
+  
+  love.graphics.draw(goYeti, 165, 30, 0, 0.4, 0.4)
   love.graphics.draw(backButton, 25, 25)
   love.graphics.draw(gameOverBack, 5, 160)
   
@@ -25,7 +27,7 @@ function GameOverDraw()
   love.graphics.print(coins, (windowWidth / 2) - 30, 500)
   
   love.graphics.print("Height: ", (windowWidth / 2) - 75, 600)
-  love.graphics.print(0, (windowWidth / 2) - 30, 650)
+  love.graphics.print(currentHeight, (windowWidth / 2) - 30, 650)
   
   love.graphics.print("Best Achievement: ", (windowWidth / 2) - 225, 750)
   love.graphics.print(0, (windowWidth / 2) - 30, 800)

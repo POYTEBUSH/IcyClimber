@@ -12,26 +12,28 @@ function FallingSnowLoad()
 end
 
 function FallingSnowUpdate(dt)
-
-  snow1Y = snow1Y + (200 * dt * speedModifier)
-  snow2Y = snow2Y + (200 * dt * speedModifier)
-  snow1SmallY = snow1SmallY + (225 * dt * speedModifier)
-  snow2SmallY = snow2SmallY + (225 * dt * speedModifier)
   
-  if(snow1Y >= 960)then
-    snow1Y = -960
-  end
-  
-  if(snow2Y >= 960)then
-    snow2Y = -960
-  end 
+  if (gameState ~= "death") then 
+    snow1Y = snow1Y + (200 * dt * speedModifier)
+    snow2Y = snow2Y + (200 * dt * speedModifier)
+    snow1SmallY = snow1SmallY + (225 * dt * speedModifier)
+    snow2SmallY = snow2SmallY + (225 * dt * speedModifier)
     
-  if(snow1SmallY >= 960)then
-    snow1SmallY = -960
-  end
-  
-  if(snow2SmallY >= 960)then
-    snow2SmallY = -960
+    if(snow1Y >= 960)then
+      snow1Y = -960
+    end
+    
+    if(snow2Y >= 960)then
+      snow2Y = -960
+    end 
+      
+    if(snow1SmallY >= 960)then
+      snow1SmallY = -960
+    end
+    
+    if(snow2SmallY >= 960)then
+      snow2SmallY = -960
+    end
   end
 end
 

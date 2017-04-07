@@ -1,7 +1,7 @@
 mouse = {}
 
 function AchievementsLoad()    
-  
+  reachedTargets = 1
   backButton = love.graphics.newImage("Sprites/BackButton.png")
   achievementBack = love.graphics.newImage("Sprites/AchievementBackground.png")
 end
@@ -21,7 +21,11 @@ function AchievementsDraw()
   
   love.graphics.setFont(scoreFont)
   for i,h in ipairs(heights) do
-    love.graphics.setColor(230,230,230)
+    if (i <= reachedTargets) then
+      love.graphics.setColor(230,0,0)
+    else
+      love.graphics.setColor(230,230,230)
+    end
     love.graphics.print(h.name, 30, (i + 5) * 30)
     love.graphics.print(h.h, 395, (i + 5) * 30)
   end

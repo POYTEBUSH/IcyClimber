@@ -95,6 +95,8 @@ function PlayerMousePressed(x, y, button)
       playerState = "grapplingRight"
       grappleTarget.x = x
       grappleTarget.y = y
+      
+      currentHeight = currentHeight + math.ceil((playerPosY - y) / 10)
     end
   end
   
@@ -105,6 +107,8 @@ function PlayerMousePressed(x, y, button)
       playerState = "grapplingLeft" 
       grappleTarget.x = x
       grappleTarget.y = y
+      
+      currentHeight = currentHeight + math.ceil((playerPosY - y) / 10)
     end      
   end
   
